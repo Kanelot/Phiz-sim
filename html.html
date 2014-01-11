@@ -1,0 +1,58 @@
+<h1> Here is the page where we test objects in SVG</h1>
+
+<head>
+    <title>PHIZ SIM!!</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <h2>THE RESIZABLE CIRCLE!!</h2>
+    <svg id="svg" height="200" xmlns="http://www.google.com">
+        <circle id="c1" cx="150" cy="50" r="50" fill="red" />
+    </svg>
+    <br>
+    <input style="submit" type="submit" id="Low" value="Lower me!"></body>
+    <input style="submit" type="submit" id="Height" value="Raise me!"></body>
+    <input style="submit" type="submit" id="Widen" value="Widen me!"></body>
+<input style="submit" type="submit" id="Shrink" value="Shrink me!"></body>
+    </body>
+    
+    
+    <script>
+        var c = document.querySelectorAll("#c1")[0];
+        var Height=function() {
+            var x = parseInt(c.getAttribute ("cy"));
+            x=x-1;
+            c.setAttribute("cy",x);
+        }
+    var Low=function() {
+        var x = parseInt(c.getAttribute ("cy"));
+        x=x+1;
+        c.setAttribute("cy",x);
+    }
+    
+        var Widen=function() {
+            var x = parseInt(c.getAttribute ("r"));
+            x=x+1;
+            c.setAttribute("r",x);
+        }
+    var Shrink=function() {
+        var x = parseInt(c.getAttribute ("r"));
+        if(x>0){
+            x=x-1;
+        }
+        c.setAttribute("r",x);
+    }
+    
+    var wb = document.querySelectorAll("#Widen")[0];
+    var ub = document.querySelectorAll("#Shrink")[0];
+    var hb = document.querySelectorAll("#Height")[0];
+    var lb = document.querySelectorAll("#Low")[0];
+    
+    wb.addEventListener('click',Widen);
+    ub.addEventListener('click',Shrink);
+    hb.addEventListener('click',Height);
+    lb.addEventListener('click',Low);
+        </script>
+    
+</html>
